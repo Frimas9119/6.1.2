@@ -14,11 +14,12 @@ void Create(int* b, const int size, const int Low, const int High, int i){
 
 void Print(int* b, const int size, int i)
 {
-	
-	for (i = 0;i < 24; i++) {
-		cout << b[i] << " ";
-	}
-	cout << endl;
+	cout << setw(4) << b[i];
+	if (i < size - 1)
+		Print(b, size, i + 1);
+	else
+		cout << endl;
+
 }
 
 double Math1(int* b, const int size, int i, int z) {
@@ -48,9 +49,7 @@ void Math3(int* b, const int size, int i) {
 			b[i] = 0;
 		}
 	}
-	for (i = 0;i < 24; i++) {
-		cout << b[i]<<" ";
-	}
+	Print(b, size, 0);
 }
 int main()
 {
